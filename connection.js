@@ -16,7 +16,7 @@ module.exports = (uri, cert) => {
 
   // DB uses sslCA Certificate
   if (cert) {
-    options.sslCA = fs.readFileSync(path.join(__dirname, `./cert/${cert}`));
+    options.sslCA = fs.readFileSync(path.join(__dirname, `./${cert}`));
   }
 
   const connection = mongoose.createConnection(uri, options);

@@ -6,7 +6,7 @@ let numberOfDocuments = 0;
 async function run() {
   const cursor = SourceModel.aggregate([{ $match: {} }])
     .allowDiskUse(true)
-    .cursor({ batchSize: 500 })
+    .cursor({ batchSize: 1000 })
     .exec();
 
   await cursor.eachAsync(result => {
