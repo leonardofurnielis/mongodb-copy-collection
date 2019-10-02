@@ -1,5 +1,5 @@
-const SourceModel = require('./sourceModel');
-const TargetModel = require('./targetModel');
+const SourceModel = require('./sourceModel')('{yourcollection}');
+const TargetModel = require('./targetModel')('{yourcollection}');
 
 let numberOfDocuments = 0;
 
