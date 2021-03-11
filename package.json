@@ -9,7 +9,7 @@
   "author": "Leonardo Furnielis <leonardo.furnielis1@ibm.com>",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "3.5.2",
-    "mongoose": "5.8.11"
+    "mongodb": "3.6.4",
+    "mongoose": "5.11.19"
   }
 }
