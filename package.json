@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Leonardo Furnielis <leonardo.furnielis1@ibm.com>",
@@ -11,5 +12,13 @@
   "dependencies": {
     "mongodb": "3.6.4",
     "mongoose": "5.11.19"
+  },
+  "devDependencies": {
+    "eslint": "7.21.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-jest": "24.2.1",
+    "eslint-plugin-prettier": "3.3.1",
+    "prettier": "2.2.1",
+    "pretty-quick": "3.1.0"
   }
 }

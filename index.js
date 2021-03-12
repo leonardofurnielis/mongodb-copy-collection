@@ -1,5 +1,7 @@
-const SourceModel = require("./source-collection")("{yourcollection}");
-const TargetModel = require("./target-collection")("{yourcollection}");
+'use strict';
+
+const SourceModel = require('./source-collection')('{yourcollection}');
+const TargetModel = require('./target-collection')('{yourcollection}');
 
 let numberOfDocuments = 0;
 
@@ -13,23 +15,23 @@ async function run() {
     const targetModel = new TargetModel(result);
     targetModel
       .save(result)
-      .then((res) => {
+      .then(() => {
         numberOfDocuments++;
-        console.log("Copying", numberOfDocuments, "documents.");
+        console.log('Copying', numberOfDocuments, 'documents.');
       })
       .catch((err) => {
         if (err.code === 11000) {
           numberOfDocuments++;
-          console.log("Copying", numberOfDocuments, "documents.");
+          console.log('Copying', numberOfDocuments, 'documents.');
         } else {
-          console.log("Error: INSERT in target.");
+          console.log('Error: INSERT in target.');
         }
       });
   });
 
-  console.log("Finish Mongodb Copy.");
+  console.log('Finish Mongodb Copy.');
 }
 
-run().catch((err) => {
-  console.log("Error: FIND from source.");
+run().catch(() => {
+  console.log('Error: FIND from source.');
 });

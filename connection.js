@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
-const mongoose = require("mongoose");
-const path = require("path");
-const fs = require("fs");
+const mongoose = require('mongoose');
+const path = require('path');
+const fs = require('fs');
 
 mongoose.Promise = global.Promise;
 
@@ -23,7 +23,7 @@ module.exports = (uri, cert) => {
   const connection = mongoose.createConnection(uri, options);
 
   // Connection throws an error
-  connection.on("error", (err) => {
+  connection.on('error', (err) => {
     console.error(err);
   });
 
