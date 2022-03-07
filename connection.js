@@ -6,18 +6,15 @@ const fs = require('fs');
 
 mongoose.Promise = global.Promise;
 
-module.exports = (uri, cert) => {
+module.exports = (uri, sslCA) => {
   const options = {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    poolSize: 100,
+    minPoolSize: 10,
+    maxPoolSize: 200,
   };
 
   // DB uses sslCA Certificate
-  if (cert) {
-    options.sslCA = fs.readFileSync(path.join(__dirname, `./${cert}`));
+  if (sslCA) {
+    options.sslCA = fs.readFileSync(path.join(__dirname, `./${sslCA}`));
   }
 
   const connection = mongoose.createConnection(uri, options);
